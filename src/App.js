@@ -1,8 +1,11 @@
+import { Box } from "@mui/system";
+import Header from "./components/Header";
+
 function App() {
   return (
-    <div style={{ border: "1px solid black", height: "100vh" }}>
-      Hello from the other side
-    </div>
+    <Box>
+      <Header />
+    </Box>
   );
 }
 export default App;
