@@ -2,15 +2,16 @@ import { Box, Stack } from "@mui/system";
 import Header from "./components/Header";
 import LpList from "./components/LpList";
 import { Grid2 } from "@mui/material";
+import { useState } from "react";
 
 function App() {
-  const [size, setSize] = useState(second);
+  const [size, setSize] = useState("");
 
   return (
-    <Box sx={{ height: "100vh", overflow: "auto" }}>
+    <Box>
       <Header />
-      <Grid2 container sx={{ height: "80vh" }} size={{ lg: 4 }}>
-        <Grid2 item sx={{ height: "80%", overflowY: "auto" }}>
+      <Grid2 container width={{ lg: "35%" }}>
+        <Grid2 item sx={{ height: "60%", overflowY: "auto" }}>
           <LpList />
         </Grid2>
       </Grid2>

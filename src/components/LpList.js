@@ -1,10 +1,23 @@
 import { borderLeft, Box, Stack } from "@mui/system";
 import { fakeData } from "../data/fakeData";
-import { Divider, Typography } from "@mui/material";
+import {
+  Divider,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
 
 const LpList = () => {
+  const [sender, setSender] = useState("");
+  const handleSender = (event) => {
+    setSender(event.target.value);
+  };
+
   return (
-    <Stack divider={<Divider flexItem />}>
+    <Stack m={0.5} spacing={0.2} divider={<Divider flexItem />}>
       <Stack
         direction={"row"}
         divider={<Divider orientation="vertical" flexItem />}
@@ -13,7 +26,32 @@ const LpList = () => {
           bgcolor: "secondary.main",
           color: "primary.main",
           pr: "10px",
-          fontSize: "0.8rem",
+          fontSize: "0.7rem",
+        }}
+      >
+        <FormControl fullWidth>
+          <InputLabel id="listSender">فرستنده</InputLabel>
+          <Select
+            labelId="listSender"
+            value={sender}
+            label="Sender"
+            onChange={handleSender}
+          >
+            {fakeData.map((car) => (
+              <MenuItem value={car.senderCam}>{car.senderCam}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Stack>
+      <Stack
+        direction={"row"}
+        divider={<Divider orientation="vertical" flexItem />}
+        sx={{
+          height: 30,
+          bgcolor: "secondary.main",
+          color: "primary.main",
+          pr: "10px",
+          fontSize: "0.7rem",
         }}
       >
         <Typography
@@ -54,13 +92,21 @@ const LpList = () => {
         return (
           <Stack
             direction={"row"}
-            divider={<Divider orientation="vertical" flexItem />}
+            divider={
+              <Divider
+                sx={{ borderColor: "primary.main" }}
+                orientation="vertical"
+                flexItem
+              />
+            }
             sx={{
-              height: 50,
+              height: 35,
+              outline: 1,
+              outlineColor: "primary.main",
               borderRight: "10px solid",
               borderRightColor: car.status,
               borderRadius: "5px",
-              fontSize: "0.8rem",
+              fontSize: "0.65rem",
             }}
           >
             <Typography

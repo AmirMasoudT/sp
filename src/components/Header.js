@@ -2,11 +2,11 @@ import { Grid2, Typography } from "@mui/material";
 import ShowClock from "./ShowClock";
 import AccountMenu from "./AccountMenu";
 import MainMenu from "./MainMenu";
+import { Stack } from "@mui/system";
 
 const Header = () => {
   return (
-    <Grid2
-      container
+    <Stack
       direction="column"
       color="secondary.light"
       bgcolor="primary.main"
@@ -25,7 +25,7 @@ const Header = () => {
             سامانه پایش پلاک‌های دستور دار
           </Typography>
         </Grid2>
-        <Grid2 item sx={{ textAlign: "center" }}>
+        <Grid2 item>
           <ShowClock />
         </Grid2>
       </Grid2>
@@ -37,7 +37,7 @@ const Header = () => {
           <AccountMenu />
         </Grid2>
       </Grid2>
-    </Grid2>
+    </Stack>
   );
 };
 

@@ -6,7 +6,7 @@ export const fakeData = [
     passageCity: "تهران",
     passageWay: "جاده قدیم کرج، ورودی",
     senderCam: "پلاک خوان تهران",
-    status: "yellow",
+    status: "gold",
   },
   {
     licenseNo: "87 د 654 - 32",
@@ -15,7 +15,7 @@ export const fakeData = [
     passageCity: "اصفهان",
     passageWay: "آزادراه ذوب آهن، خروجی",
     senderCam: "پلاک خوان اصفهان",
-    status: "yellow",
+    status: "gold",
   },
   {
     licenseNo: "45 ص 123 - 91",
@@ -24,7 +24,7 @@ export const fakeData = [
     passageCity: "مشهد",
     passageWay: "بزرگراه آسیایی، ورودی",
     senderCam: "پلاک خوان مشهد",
-    status: "yellow",
+    status: "gold",
   },
   {
     licenseNo: "32 ت 879 - 47",
@@ -60,7 +60,7 @@ export const fakeData = [
     passageCity: "کرمان",
     passageWay: "بلوار امام رضا، ورودی",
     senderCam: "پلاک خوان کرمان",
-    status: "yellow",
+    status: "gold",
   },
   {
     licenseNo: "76 ق 543 - 89",
@@ -69,7 +69,7 @@ export const fakeData = [
     passageCity: "رشت",
     passageWay: "جاده رشت-انزلی، ورودی",
     senderCam: "پلاک خوان رشت",
-    status: "yellow",
+    status: "gold",
   },
   {
     licenseNo: "91 س 321 - 44",
@@ -78,7 +78,7 @@ export const fakeData = [
     passageCity: "کرج",
     passageWay: "آزادراه تهران-کرج، خروجی",
     senderCam: "پلاک خوان کرج",
-    status: "yellow",
+    status: "gold",
   },
   {
     licenseNo: "54 ش 678 - 12",
@@ -87,7 +87,7 @@ export const fakeData = [
     passageCity: "اهواز",
     passageWay: "خیابان نادری، ورودی",
     senderCam: "پلاک خوان اهواز",
-    status: "yellow",
+    status: "gold",
   },
   // New records
   {
@@ -124,7 +124,7 @@ export const fakeData = [
     passageCity: "تبریز",
     passageWay: "ورودی میدان آزادی",
     senderCam: "پلاک خوان تبریز",
-    status: "yellow",
+    status: "gold",
   },
   {
     licenseNo: "55 ر 555 - 55",
