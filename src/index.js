@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { ThemeProvider } from "@mui/system";
-import Rtl from "./Rtl";
-import { createTheme, CssBaseline } from "@mui/material";
-// import Vazir from "./fonts/vazir/Vazir.woff2";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
 import Vazir from "./fonts/Vazirmatn.ttf";
 
 const theme = createTheme({
@@ -38,10 +36,8 @@ const el = document.getElementById("root");
 const root = ReactDOM.createRoot(el);
 
 root.render(
-  <Rtl>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
-  </Rtl>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <App />
+  </ThemeProvider>
 );
