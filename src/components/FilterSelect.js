@@ -8,6 +8,7 @@ const FilterSelect = ({ id, value, label, onChange, listArray }) => {
   return (
     <Stack
       sx={{
+        borderRadius: 2,
         m: 0.5,
         mt: 1.4,
         bgcolor: "secondary.main",
@@ -17,7 +18,13 @@ const FilterSelect = ({ id, value, label, onChange, listArray }) => {
       <Rtl>
         <FormControl fullWidth size="small">
           <InputLabel id={id}>{label}</InputLabel>
-          <Select labelId={id} value={value} label={label} onChange={onChange}>
+          <Select
+            sx={{ borderRadius: 2 }}
+            labelId={id}
+            value={value}
+            label={label}
+            onChange={onChange}
+          >
             <MenuItem sx={{ p: 2 }} value=""></MenuItem>
             {uniqeArray.map((x) => (
               <MenuItem value={x}>{x}</MenuItem>

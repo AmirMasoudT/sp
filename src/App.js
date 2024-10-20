@@ -10,8 +10,8 @@ function App() {
   return (
     <Box>
       <Header />
-      <Grid2 container width={{ lg: "35%" }}>
-        <Grid2 item>
+      <Grid2 container>
+        <Grid2 item width={{ lg: "35%" }}>
           <LpList />
         </Grid2>
       </Grid2>
