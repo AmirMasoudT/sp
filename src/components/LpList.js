@@ -1,4 +1,4 @@
-import { Stack } from "@mui/system";
+import { alpha, Stack } from "@mui/system";
 import { fakeData } from "../data/fakeData";
 import { Card, CardActionArea, Divider, Typography } from "@mui/material";
 import { useState } from "react";
@@ -106,8 +106,6 @@ const LpList = () => {
           return (
             <Card
               sx={{
-                bgcolor:
-                  "linear-gradient(45deg," & car.status & " , transparent)",
                 overflow: "visible",
                 outline: 1,
                 outlineColor: "primary.main",
