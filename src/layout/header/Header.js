@@ -1,7 +1,7 @@
 import { Grid2, Typography } from "@mui/material";
-import ShowClock from "./ShowClock";
-import AccountMenu from "./AccountMenu";
-import MainMenu from "./MainMenu";
+import ShowClock from "./views/ShowClock";
+import AccountMenu from "./views/AccountMenu";
+import MainMenu from "./views/MainMenu";
 import { Stack } from "@mui/system";
 
 const Header = () => {

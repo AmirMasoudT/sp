@@ -1,8 +1,24 @@
-import { alpha, Stack } from "@mui/system";
-import { fakeData } from "../data/fakeData";
-import { Card, CardActionArea, Divider, Typography } from "@mui/material";
+import { Stack } from "@mui/system";
+import { fakeData } from "../../../data/fakeData";
+import {
+  Avatar,
+  Card,
+  CardActionArea,
+  Divider,
+  Grid2,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  Typography,
+} from "@mui/material";
+import CarCrashIcon from "@mui/icons-material/CarCrash";
 import { useState } from "react";
-import FilterSelect from "./FilterSelect";
+import FilterSelect from "../../../components/FilterSelect";
+import Rtl from "../../../utils/Rtl";
 
 const LpList = () => {
   const [sender, setSender] = useState("");
@@ -12,6 +28,11 @@ const LpList = () => {
   const [pursuitReason, setPursuitReason] = useState("");
   const handlePursuitReason = (event) => {
     setPursuitReason(event.target.value);
+  };
+
+  const [selectedIndex, setSelectedIndex] = useState(1);
+  const handleListItemClick = (e, index) => {
+    setSelectedIndex(index);
   };
 
   const filteredList = fakeData.filter(
@@ -36,7 +57,7 @@ const LpList = () => {
         onChange={handlePursuitReason}
         listArray={fakeData.map((car) => car.pursuitReason)}
       />
-      <Stack
+      {/* <Stack
         p={0.5}
         m={0.5}
         mt={1.4}
@@ -170,7 +191,72 @@ const LpList = () => {
             </Card>
           );
         })}
-      </Stack>
+      </Stack> */}
+      <Rtl>
+        <List
+          sx={{
+            width: "100%",
+            position: "relative",
+            overflow: "auto",
+            maxHeight: 320,
+            "& ul": { padding: 0 },
+          }}
+          subheader={
+            <ListSubheader component="div" id="nested-list-subheader">
+              لیست پلاک‌ها
+            </ListSubheader>
+          }
+        ></List>
+        {filteredList.map((car, index) => {
+          return (
+            <ListItem alignItems="flex-start">
+              <ListItemButton
+                selected={selectedIndex === index}
+                onClick={(e) => handleListItemClick(e, index)}
+              >
+                <ListItemText
+                  primary={car.licenseNo}
+                  secondary={
+                    <>
+                      <Stack spacing={1}>
+                        <Stack direction="row" alignItems="center">
+                          <CarCrashIcon sx={{ display: "inline" }} />
+                          <Typography
+                            variant="body2"
+                            sx={{ color: "text.primary" }}
+                          >
+                            {car.travelTime}
+                          </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center">
+                          <CarCrashIcon sx={{ display: "inline" }} />
+                          <Typography
+                            variant="body2"
+                            sx={{ color: "text.primary" }}
+                          >
+                            {car.pursuitReason}
+                          </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center">
+                          <CarCrashIcon sx={{ display: "inline" }} />
+                          <Typography
+                            variant="body2"
+                            sx={{ color: "text.primary" }}
+                          >
+                            {car.passageCity}
+                            <br />
+                            {car.passageWay}
+                          </Typography>
+                        </Stack>
+                      </Stack>
+                    </>
+                  }
+                />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
+      </Rtl>
     </Stack>
   );
 };

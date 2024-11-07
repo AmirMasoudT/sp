@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
-import Header from "./components/Header";
-import LpList from "./components/LpList";
+import Header from "./layout/header/Header";
+import LpList from "./features/LpList/views/LpList";
 import { useState } from "react";
 import { Grid2 } from "@mui/material";
 
