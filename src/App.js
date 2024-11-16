@@ -11,7 +11,7 @@ function App() {
     <Box>
       <Header />
       <Grid2 container>
-        <Grid2 item width={{ lg: "35%" }}>
+        <Grid2 item width={{ lg: "30%" }}>
           <LpList />
         </Grid2>
       </Grid2>

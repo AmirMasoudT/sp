@@ -1,4 +1,12 @@
-import { Stack } from "@mui/system";
+import {
+  bgcolor,
+  border,
+  borderColor,
+  borderRadius,
+  Box,
+  Stack,
+  width,
+} from "@mui/system";
 import { fakeData } from "../../../data/fakeData";
 import {
   Avatar,
@@ -13,12 +21,18 @@ import {
   ListItemIcon,
   ListItemText,
   ListSubheader,
+  SvgIcon,
   Typography,
 } from "@mui/material";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import CarCrashIcon from "@mui/icons-material/CarCrash";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import SouthAmericaIcon from "@mui/icons-material/SouthAmerica";
+import LinkedCameraIcon from "@mui/icons-material/LinkedCamera";
 import { useState } from "react";
 import FilterSelect from "../../../components/FilterSelect";
 import Rtl from "../../../utils/Rtl";
+import IranFlag from "../../../assets/IranFlag.svg";
 
 const LpList = () => {
   const [sender, setSender] = useState("");
@@ -198,64 +212,178 @@ const LpList = () => {
             width: "100%",
             position: "relative",
             overflow: "auto",
-            maxHeight: 320,
+            maxHeight: "500px",
+            scrollbarWidth: "thin",
             "& ul": { padding: 0 },
+            "& .MuiListItemButton-root:hover": {
+              bgcolor: "var(--mui-palette-secondary-light) !important",
+            },
+            "& .Mui-selected": {
+              bgcolor: "var(--mui-palette-secondary-main) !important",
+              color: "var(--mui-palette-primary-main) !important",
+            },
+            "& .Mui-selected:hover": {
+              bgcolor: "var(--mui-palette-secondary-dark) !important",
+            },
           }}
           subheader={
             <ListSubheader component="div" id="nested-list-subheader">
               لیست پلاک‌ها
             </ListSubheader>
           }
-        ></List>
-        {filteredList.map((car, index) => {
-          return (
-            <ListItem alignItems="flex-start">
-              <ListItemButton
-                selected={selectedIndex === index}
-                onClick={(e) => handleListItemClick(e, index)}
-              >
-                <ListItemText
-                  primary={car.licenseNo}
-                  secondary={
-                    <>
-                      <Stack spacing={1}>
-                        <Stack direction="row" alignItems="center">
-                          <CarCrashIcon sx={{ display: "inline" }} />
-                          <Typography
-                            variant="body2"
-                            sx={{ color: "text.primary" }}
+        >
+          <Stack
+            direction="row"
+            flexWrap="wrap"
+            sx={{
+              "& .MuiListItem-root": { width: "49%" },
+            }}
+          >
+            {filteredList.map((car, index) => {
+              console.log(car.licenseNo.split(/\s/g));
+              return (
+                <ListItem alignItems="flex-start" disableGutters>
+                  <ListItemButton
+                    selected={selectedIndex === index}
+                    onClick={(e) => handleListItemClick(e, index)}
+                  >
+                    <Stack
+                      direction="column"
+                      sx={{
+                        "&::before": {
+                          content: '""',
+                          position: "absolute",
+                          top: 5,
+                          right: 5,
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "50%",
+                          bgcolor: car.status,
+                        },
+                      }}
+                    >
+                      <Box
+                        width="125px"
+                        mb={0.5}
+                        sx={{
+                          bgcolor: "#ffffff",
+                          border: 2,
+                          borderColor: "#000000",
+                          borderRadius: "3px",
+                          fontWeight: "600",
+                          color: "#000000",
+                        }}
+                      >
+                        <Stack
+                          direction="row-reverse"
+                          justifyContent="space-between"
+                        >
+                          <Stack
+                            direction="column"
+                            justifyContent="space-between"
+                            sx={{
+                              bgcolor: "blue",
+                              width: "11%",
+                              p: 0.2,
+                            }}
                           >
-                            {car.travelTime}
-                          </Typography>
-                        </Stack>
-                        <Stack direction="row" alignItems="center">
-                          <CarCrashIcon sx={{ display: "inline" }} />
-                          <Typography
-                            variant="body2"
-                            sx={{ color: "text.primary" }}
+                            <img width="100%" src={IranFlag} />
+                            <Typography
+                              sx={{
+                                color: "#ffffff",
+                                fontSize: "0.2rem",
+                                textAlign: "end",
+                              }}
+                            >
+                              I.R. IRAN
+                            </Typography>
+                          </Stack>
+                          <Stack
+                            alignSelf="center"
+                            direction="row-reverse"
+                            justifyContent="space-around"
+                            width="100%"
+                            px={0.5}
+                            letterSpacing={2}
                           >
-                            {car.pursuitReason}
-                          </Typography>
-                        </Stack>
-                        <Stack direction="row" alignItems="center">
-                          <CarCrashIcon sx={{ display: "inline" }} />
-                          <Typography
-                            variant="body2"
-                            sx={{ color: "text.primary" }}
+                            <span>
+                              {Number(
+                                car.licenseNo.split(/\s/)[0]
+                              ).toLocaleString("fa-IR")}
+                            </span>
+                            <span>{car.licenseNo.split(/\s/)[1]}</span>
+                            <span>
+                              {Number(
+                                car.licenseNo.split(/\s/)[2]
+                              ).toLocaleString("fa-IR")}
+                            </span>
+                          </Stack>
+                          <Stack
+                            sx={{ borderRight: 1, px: 0.3 }}
+                            spacing={0.6}
+                            alignItems="center"
                           >
-                            {car.passageCity}
-                            <br />
-                            {car.passageWay}
-                          </Typography>
+                            <Typography
+                              fontSize="0.5rem"
+                              fontWeight="inherit"
+                              sx={{ transform: "scaleY(0.5) translateY(-3px)" }}
+                            >
+                              ایران
+                            </Typography>
+                            <Typography
+                              fontSize="0.9rem"
+                              fontWeight="inherit"
+                              lineHeight="0.1"
+                            >
+                              {Number(
+                                car.licenseNo.split(/\s/)[4]
+                              ).toLocaleString("fa-IR")}
+                            </Typography>
+                          </Stack>
                         </Stack>
+                      </Box>
+                      <Stack direction="row" alignItems="center" spacing={0.5}>
+                        <AccessTimeIcon fontSize="2px" />
+                        <ListItemText
+                          primary={car.travelTime}
+                          primaryTypographyProps={{ fontSize: "0.7rem" }}
+                        />
                       </Stack>
-                    </>
-                  }
-                />
-              </ListItemButton>
-            </ListItem>
-          );
-        })}
+                      <Stack direction="row" alignItems="center" spacing={0.5}>
+                        <CarCrashIcon fontSize="2px" />
+                        <ListItemText
+                          primary={car.pursuitReason}
+                          primaryTypographyProps={{ fontSize: "0.7rem" }}
+                        />
+                      </Stack>
+                      <Stack direction="row" alignItems="center" spacing={0.5}>
+                        <SouthAmericaIcon fontSize="2px" />
+                        <ListItemText
+                          primary={car.passageCity}
+                          primaryTypographyProps={{ fontSize: "0.7rem" }}
+                        />
+                      </Stack>
+                      <Stack direction="row" alignItems="center" spacing={0.5}>
+                        <LinkedCameraIcon fontSize="2px" />
+                        <ListItemText
+                          primary={car.senderCam}
+                          primaryTypographyProps={{ fontSize: "0.7rem" }}
+                        />
+                      </Stack>
+                      <Stack direction="row" alignItems="center" spacing={0.5}>
+                        <LocationOnIcon fontSize="2px" />
+                        <ListItemText
+                          primary={car.passageWay}
+                          primaryTypographyProps={{ fontSize: "0.7rem" }}
+                        />
+                      </Stack>
+                    </Stack>
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </Stack>
+        </List>
       </Rtl>
     </Stack>
   );

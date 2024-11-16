@@ -6,13 +6,16 @@ import { CssBaseline } from "@mui/material";
 import Vazir from "./fonts/Vazirmatn.ttf";
 
 const theme = createTheme({
+  cssVariables: true,
   direction: "rtl",
   palette: {
     primary: {
-      main: "#002709",
+      // main: "#002709",
+      main: "#003e27",
     },
     secondary: {
       main: "#b0eab1",
+      // main: "#bfcea8",
     },
   },
   typography: {

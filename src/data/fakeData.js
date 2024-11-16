@@ -342,7 +342,7 @@ export const fakeData = [
     delay: 12,
   },
   {
-    licenseNo: "00 و 555 - 66",
+    licenseNo: "38 و 555 - 66",
     travelTime: "10:40",
     pursuitReason: "عبور از خط عابر پیاده",
     passageCity: "اصفهان",
@@ -414,7 +414,7 @@ export const fakeData = [
     delay: 22,
   },
   {
-    licenseNo: "44 خ 999 - 00",
+    licenseNo: "44 خ 999 - 21",
     travelTime: "18:40",
     pursuitReason: "پارک غیرمجاز",
     passageCity: "اهواز",
@@ -432,7 +432,7 @@ export const fakeData = [
     delay: 14,
   },
   {
-    licenseNo: "55 ج 000 - 11",
+    licenseNo: "55 ج 486 - 11",
     travelTime: "19:20",
     pursuitReason: "توقف ناگهانی",
     passageCity: "کرج",
