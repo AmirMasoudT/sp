@@ -212,7 +212,6 @@ const LpList = () => {
             width: "100%",
             position: "relative",
             overflow: "auto",
-            maxHeight: "500px",
             scrollbarWidth: "thin",
             "& ul": { padding: 0 },
             "& .MuiListItemButton-root:hover": {
@@ -236,7 +235,9 @@ const LpList = () => {
             direction="row"
             flexWrap="wrap"
             sx={{
-              "& .MuiListItem-root": { width: "49%" },
+              "& .MuiListItem-root": {
+                width: { sm: 1 / 3, md: "49%" },
+              },
             }}
           >
             {filteredList.map((car, index) => {
