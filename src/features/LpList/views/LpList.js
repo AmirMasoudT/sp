@@ -14,6 +14,7 @@ import {
   CardActionArea,
   Divider,
   Grid2,
+  Grow,
   List,
   ListItem,
   ListItemAvatar,
@@ -34,7 +35,7 @@ import FilterSelect from "../../../components/FilterSelect";
 import Rtl from "../../../utils/Rtl";
 import IranFlag from "../../../assets/IranFlag.svg";
 
-const LpList = () => {
+const LpList = ({ selected }) => {
   const [sender, setSender] = useState("");
   const handleSender = (event) => {
     setSender(event.target.value);
@@ -54,24 +55,26 @@ const LpList = () => {
       (sender === "" || car.senderCam === sender) &&
       (pursuitReason === "" || car.pursuitReason === pursuitReason)
   );
+  selected(filteredList[selectedIndex]);
 
   return (
-    <Stack height={"87vh"}>
-      <FilterSelect
-        id="listSender"
-        value={sender}
-        label="فرستنده"
-        onChange={handleSender}
-        listArray={fakeData.map((car) => car.senderCam)}
-      />
-      <FilterSelect
-        id="listPursuitReason"
-        value={pursuitReason}
-        label="گروه علت تعقیب"
-        onChange={handlePursuitReason}
-        listArray={fakeData.map((car) => car.pursuitReason)}
-      />
-      {/* <Stack
+    <Grow in>
+      <Stack height={"87vh"}>
+        <FilterSelect
+          id="listSender"
+          value={sender}
+          label="فرستنده"
+          onChange={handleSender}
+          listArray={fakeData.map((car) => car.senderCam)}
+        />
+        <FilterSelect
+          id="listPursuitReason"
+          value={pursuitReason}
+          label="گروه علت تعقیب"
+          onChange={handlePursuitReason}
+          listArray={fakeData.map((car) => car.pursuitReason)}
+        />
+        {/* <Stack
         p={0.5}
         m={0.5}
         mt={1.4}
@@ -206,187 +209,220 @@ const LpList = () => {
           );
         })}
       </Stack> */}
-      <Rtl>
-        <List
-          sx={{
-            width: "100%",
-            position: "relative",
-            overflow: "auto",
-            scrollbarWidth: "thin",
-            "& ul": { padding: 0 },
-            "& .MuiListItemButton-root:hover": {
-              bgcolor: "var(--mui-palette-secondary-light) !important",
-            },
-            "& .Mui-selected": {
-              bgcolor: "var(--mui-palette-secondary-main) !important",
-              color: "var(--mui-palette-primary-main) !important",
-            },
-            "& .Mui-selected:hover": {
-              bgcolor: "var(--mui-palette-secondary-dark) !important",
-            },
-          }}
-          subheader={
-            <ListSubheader component="div" id="nested-list-subheader">
-              لیست پلاک‌ها
-            </ListSubheader>
-          }
-        >
-          <Stack
-            direction="row"
-            flexWrap="wrap"
+        <Rtl>
+          <List
             sx={{
-              "& .MuiListItem-root": {
-                width: { sm: 1 / 3, md: "49%" },
+              width: "100%",
+              position: "relative",
+              overflow: "auto",
+              scrollbarWidth: "thin",
+              "& ul": { padding: 0 },
+              "& .MuiListItemButton-root:hover": {
+                bgcolor: "var(--mui-palette-secondary-light) !important",
+              },
+              "& .Mui-selected": {
+                bgcolor: "var(--mui-palette-secondary-main) !important",
+                color: "var(--mui-palette-primary-main) !important",
+              },
+              "& .Mui-selected:hover": {
+                bgcolor: "var(--mui-palette-secondary-dark) !important",
               },
             }}
+            subheader={
+              <ListSubheader
+                component="div"
+                id="nested-list-subheader"
+                sx={{
+                  color: "#000000",
+                  textAlign: "center",
+                  fontWeight: "600",
+                  fontSize: "1rem",
+                  lineHeight: 0.8,
+                  py: 1,
+                }}
+              >
+                لیست پلاک‌ها
+              </ListSubheader>
+            }
           >
-            {filteredList.map((car, index) => {
-              console.log(car.licenseNo.split(/\s/g));
-              return (
-                <ListItem alignItems="flex-start" disableGutters>
-                  <ListItemButton
-                    selected={selectedIndex === index}
-                    onClick={(e) => handleListItemClick(e, index)}
-                  >
-                    <Stack
-                      direction="column"
-                      sx={{
-                        "&::before": {
-                          content: '""',
-                          position: "absolute",
-                          top: 5,
-                          right: 5,
-                          width: "20px",
-                          height: "20px",
-                          borderRadius: "50%",
-                          bgcolor: car.status,
-                        },
-                      }}
+            <Stack
+              direction="row"
+              flexWrap="wrap"
+              sx={{
+                "& .MuiListItem-root": {
+                  width: { sm: 1 / 3, md: "49%" },
+                },
+              }}
+            >
+              {filteredList.map((car, index) => {
+                return (
+                  <ListItem alignItems="flex-start" disableGutters>
+                    <ListItemButton
+                      selected={selectedIndex === index}
+                      onClick={(e) => handleListItemClick(e, index)}
                     >
-                      <Box
-                        width="125px"
-                        mb={0.5}
+                      <Stack
+                        direction="column"
                         sx={{
-                          bgcolor: "#ffffff",
-                          border: 2,
-                          borderColor: "#000000",
-                          borderRadius: "3px",
-                          fontWeight: "600",
-                          color: "#000000",
+                          "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            top: 5,
+                            right: 5,
+                            width: "20px",
+                            height: "20px",
+                            borderRadius: "50%",
+                            bgcolor: car.status,
+                          },
                         }}
                       >
-                        <Stack
-                          direction="row-reverse"
-                          justifyContent="space-between"
+                        <Box
+                          width="125px"
+                          mb={0.5}
+                          sx={{
+                            bgcolor: "#ffffff",
+                            border: 2,
+                            borderColor: "#000000",
+                            borderRadius: "3px",
+                            fontWeight: "600",
+                            color: "#000000",
+                          }}
                         >
                           <Stack
-                            direction="column"
+                            direction="row-reverse"
                             justifyContent="space-between"
-                            sx={{
-                              bgcolor: "blue",
-                              width: "11%",
-                              p: 0.2,
-                            }}
                           >
-                            <img width="100%" src={IranFlag} />
-                            <Typography
+                            <Stack
+                              direction="column"
+                              justifyContent="space-between"
                               sx={{
-                                color: "#ffffff",
-                                fontSize: "0.2rem",
-                                textAlign: "end",
+                                bgcolor: "blue",
+                                width: "11%",
+                                p: 0.2,
                               }}
                             >
-                              I.R. IRAN
-                            </Typography>
-                          </Stack>
-                          <Stack
-                            alignSelf="center"
-                            direction="row-reverse"
-                            justifyContent="space-around"
-                            width="100%"
-                            px={0.5}
-                            letterSpacing={2}
-                          >
-                            <span>
-                              {Number(
-                                car.licenseNo.split(/\s/)[0]
-                              ).toLocaleString("fa-IR")}
-                            </span>
-                            <span>{car.licenseNo.split(/\s/)[1]}</span>
-                            <span>
-                              {Number(
-                                car.licenseNo.split(/\s/)[2]
-                              ).toLocaleString("fa-IR")}
-                            </span>
-                          </Stack>
-                          <Stack
-                            sx={{ borderRight: 1, px: 0.3 }}
-                            spacing={0.6}
-                            alignItems="center"
-                          >
-                            <Typography
-                              fontSize="0.5rem"
-                              fontWeight="inherit"
-                              sx={{ transform: "scaleY(0.5) translateY(-3px)" }}
+                              <img width="100%" src={IranFlag} />
+                              <Typography
+                                sx={{
+                                  color: "#ffffff",
+                                  fontSize: "0.2rem",
+                                  textAlign: "end",
+                                }}
+                              >
+                                I.R. IRAN
+                              </Typography>
+                            </Stack>
+                            <Stack
+                              alignSelf="center"
+                              direction="row-reverse"
+                              justifyContent="space-around"
+                              width="100%"
+                              px={0.5}
+                              letterSpacing={2}
                             >
-                              ایران
-                            </Typography>
-                            <Typography
-                              fontSize="0.9rem"
-                              fontWeight="inherit"
-                              lineHeight="0.1"
+                              <span>
+                                {Number(
+                                  car.licenseNo.split(/\s/)[0]
+                                ).toLocaleString("fa-IR")}
+                              </span>
+                              <span>{car.licenseNo.split(/\s/)[1]}</span>
+                              <span>
+                                {Number(
+                                  car.licenseNo.split(/\s/)[2]
+                                ).toLocaleString("fa-IR")}
+                              </span>
+                            </Stack>
+                            <Stack
+                              sx={{ borderRight: 1, px: 0.3, pb: 0.6 }}
+                              spacing={0.5}
+                              alignItems="center"
                             >
-                              {Number(
-                                car.licenseNo.split(/\s/)[4]
-                              ).toLocaleString("fa-IR")}
-                            </Typography>
+                              <Typography
+                                fontSize="0.5rem"
+                                fontWeight="inherit"
+                                sx={{
+                                  transform: "scaleY(0.5) translateY(-3px)",
+                                }}
+                              >
+                                ایران
+                              </Typography>
+                              <Typography
+                                fontSize="0.8rem"
+                                fontWeight="inherit"
+                                lineHeight="0.1"
+                              >
+                                {Number(
+                                  car.licenseNo.split(/\s/)[4]
+                                ).toLocaleString("fa-IR")}
+                              </Typography>
+                            </Stack>
                           </Stack>
+                        </Box>
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={0.5}
+                        >
+                          <AccessTimeIcon fontSize="2px" />
+                          <ListItemText
+                            primary={car.travelTime}
+                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                          />
                         </Stack>
-                      </Box>
-                      <Stack direction="row" alignItems="center" spacing={0.5}>
-                        <AccessTimeIcon fontSize="2px" />
-                        <ListItemText
-                          primary={car.travelTime}
-                          primaryTypographyProps={{ fontSize: "0.7rem" }}
-                        />
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={0.5}
+                        >
+                          <CarCrashIcon fontSize="2px" />
+                          <ListItemText
+                            primary={car.pursuitReason}
+                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                          />
+                        </Stack>
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={0.5}
+                        >
+                          <SouthAmericaIcon fontSize="2px" />
+                          <ListItemText
+                            primary={car.passageCity}
+                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                          />
+                        </Stack>
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={0.5}
+                        >
+                          <LinkedCameraIcon fontSize="2px" />
+                          <ListItemText
+                            primary={car.senderCam}
+                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                          />
+                        </Stack>
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={0.5}
+                        >
+                          <LocationOnIcon fontSize="2px" />
+                          <ListItemText
+                            primary={car.passageWay}
+                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                          />
+                        </Stack>
                       </Stack>
-                      <Stack direction="row" alignItems="center" spacing={0.5}>
-                        <CarCrashIcon fontSize="2px" />
-                        <ListItemText
-                          primary={car.pursuitReason}
-                          primaryTypographyProps={{ fontSize: "0.7rem" }}
-                        />
-                      </Stack>
-                      <Stack direction="row" alignItems="center" spacing={0.5}>
-                        <SouthAmericaIcon fontSize="2px" />
-                        <ListItemText
-                          primary={car.passageCity}
-                          primaryTypographyProps={{ fontSize: "0.7rem" }}
-                        />
-                      </Stack>
-                      <Stack direction="row" alignItems="center" spacing={0.5}>
-                        <LinkedCameraIcon fontSize="2px" />
-                        <ListItemText
-                          primary={car.senderCam}
-                          primaryTypographyProps={{ fontSize: "0.7rem" }}
-                        />
-                      </Stack>
-                      <Stack direction="row" alignItems="center" spacing={0.5}>
-                        <LocationOnIcon fontSize="2px" />
-                        <ListItemText
-                          primary={car.passageWay}
-                          primaryTypographyProps={{ fontSize: "0.7rem" }}
-                        />
-                      </Stack>
-                    </Stack>
-                  </ListItemButton>
-                </ListItem>
-              );
-            })}
-          </Stack>
-        </List>
-      </Rtl>
-    </Stack>
+                    </ListItemButton>
+                  </ListItem>
+                );
+              })}
+            </Stack>
+          </List>
+        </Rtl>
+      </Stack>
+    </Grow>
   );
 };
 

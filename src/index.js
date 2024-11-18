@@ -20,6 +20,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Vazir",
+    fontSize: 12,
   },
   components: {
     MuiCssBaseline: {
