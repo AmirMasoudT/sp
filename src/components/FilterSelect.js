@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import Rtl from "../utils/Rtl";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { Stack } from "@mui/system";
 
 const FilterSelect = ({ id, value, label, onChange, listArray }) => {
   const uniqeArray = Array.from(new Set(listArray));
+
   return (
     <Stack
       sx={{
