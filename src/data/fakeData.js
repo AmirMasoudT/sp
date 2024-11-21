@@ -1,5 +1,6 @@
 export const fakeData = [
   {
+    id: 1,
     licenseNo: "12 ب 345 - 78",
     travelTime: "10:45",
     pursuitReason: "عبور غیرمجاز",
@@ -18,6 +19,7 @@ export const fakeData = [
     delay: 15,
   },
   {
+    id: 2,
     licenseNo: "87 د 654 - 32",
     travelTime: "13:15",
     pursuitReason: "سرعت غیرمجاز",
@@ -36,6 +38,7 @@ export const fakeData = [
     delay: 25,
   },
   {
+    id: 3,
     licenseNo: "45 ص 123 - 91",
     travelTime: "09:20",
     pursuitReason: "سبقت غیرمجاز",
@@ -54,6 +57,7 @@ export const fakeData = [
     delay: 12,
   },
   {
+    id: 4,
     licenseNo: "32 ت 879 - 47",
     travelTime: "15:40",
     pursuitReason: "فقدان بیمه",
@@ -72,6 +76,7 @@ export const fakeData = [
     delay: 35,
   },
   {
+    id: 5,
     licenseNo: "65 ج 213 - 55",
     travelTime: "08:05",
     pursuitReason: "فقدان مدارک",
@@ -90,6 +95,7 @@ export const fakeData = [
     delay: 18,
   },
   {
+    id: 6,
     licenseNo: "33 ف 987 - 21",
     travelTime: "16:30",
     pursuitReason: "سرقت خودرو",
@@ -108,6 +114,7 @@ export const fakeData = [
     delay: 45,
   },
   {
+    id: 7,
     licenseNo: "14 ط 456 - 66",
     travelTime: "11:50",
     pursuitReason: "عبور از چراغ قرمز",
@@ -126,6 +133,7 @@ export const fakeData = [
     delay: 22,
   },
   {
+    id: 8,
     licenseNo: "76 ق 543 - 89",
     travelTime: "07:10",
     pursuitReason: "تخلف حادثه ساز",
@@ -144,6 +152,7 @@ export const fakeData = [
     delay: 32,
   },
   {
+    id: 9,
     licenseNo: "91 س 321 - 44",
     travelTime: "14:00",
     pursuitReason: "عدم رعایت فاصله",
@@ -162,6 +171,7 @@ export const fakeData = [
     delay: 40,
   },
   {
+    id: 10,
     licenseNo: "54 ش 678 - 12",
     travelTime: "18:25",
     pursuitReason: "پارک در محل ممنوع",
@@ -180,6 +190,7 @@ export const fakeData = [
     delay: 28,
   },
   {
+    id: 11,
     licenseNo: "11 الف 111 - 11",
     travelTime: "12:30",
     pursuitReason: "توقیف",
@@ -198,6 +209,7 @@ export const fakeData = [
     delay: 18,
   },
   {
+    id: 12,
     licenseNo: "22 ب 222 - 22",
     travelTime: "14:45",
     pursuitReason: "سرقت مسلحانه",
@@ -216,6 +228,7 @@ export const fakeData = [
     delay: 50,
   },
   {
+    id: 13,
     licenseNo: "33 ج 333 - 33",
     travelTime: "09:00",
     pursuitReason: "تصادفات قابل بررسی",
@@ -234,6 +247,7 @@ export const fakeData = [
     delay: 36,
   },
   {
+    id: 14,
     licenseNo: "44 د 444 - 44",
     travelTime: "17:20",
     pursuitReason: "دعوای حقوقی",
@@ -252,6 +266,7 @@ export const fakeData = [
     delay: 27,
   },
   {
+    id: 15,
     licenseNo: "55 ر 555 - 55",
     travelTime: "11:10",
     pursuitReason: "توقیف کیفری",
@@ -270,6 +285,7 @@ export const fakeData = [
     delay: 44,
   },
   {
+    id: 16,
     licenseNo: "66 ک 111 - 22",
     travelTime: "07:50",
     pursuitReason: "توقف در خط ویژه",
@@ -288,6 +304,7 @@ export const fakeData = [
     delay: 20,
   },
   {
+    id: 17,
     licenseNo: "77 ل 222 - 33",
     travelTime: "09:30",
     pursuitReason: "عدم رعایت حق تقدم",
@@ -306,6 +323,7 @@ export const fakeData = [
     delay: 33,
   },
   {
+    id: 18,
     licenseNo: "88 م 333 - 44",
     travelTime: "12:10",
     pursuitReason: "استفاده از موبایل حین رانندگی",
@@ -324,6 +342,7 @@ export const fakeData = [
     delay: 29,
   },
   {
+    id: 19,
     licenseNo: "99 ن 444 - 55",
     travelTime: "15:25",
     pursuitReason: "پارک دوبله",
@@ -342,6 +361,7 @@ export const fakeData = [
     delay: 12,
   },
   {
+    id: 20,
     licenseNo: "38 و 555 - 66",
     travelTime: "10:40",
     pursuitReason: "عبور از خط عابر پیاده",
@@ -360,6 +380,7 @@ export const fakeData = [
     delay: 18,
   },
   {
+    id: 21,
     licenseNo: "11 ه 666 - 77",
     travelTime: "08:15",
     pursuitReason: "تخلف در بزرگراه",
@@ -378,6 +399,7 @@ export const fakeData = [
     delay: 54,
   },
   {
+    id: 22,
     licenseNo: "22 ز 777 - 88",
     travelTime: "16:50",
     pursuitReason: "سرقت خودرو",
@@ -396,6 +418,7 @@ export const fakeData = [
     delay: 45,
   },
   {
+    id: 23,
     licenseNo: "33 ح 888 - 99",
     travelTime: "14:30",
     pursuitReason: "حرکت مارپیچ",
@@ -414,6 +437,7 @@ export const fakeData = [
     delay: 22,
   },
   {
+    id: 24,
     licenseNo: "44 خ 999 - 21",
     travelTime: "18:40",
     pursuitReason: "پارک غیرمجاز",
@@ -432,6 +456,7 @@ export const fakeData = [
     delay: 14,
   },
   {
+    id: 25,
     licenseNo: "55 ج 486 - 11",
     travelTime: "19:20",
     pursuitReason: "توقف ناگهانی",

@@ -30,13 +30,15 @@ import CarCrashIcon from "@mui/icons-material/CarCrash";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SouthAmericaIcon from "@mui/icons-material/SouthAmerica";
 import LinkedCameraIcon from "@mui/icons-material/LinkedCamera";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import FilterSelect from "../../../components/FilterSelect";
 import Rtl from "../../../utils/Rtl";
 import IranFlag from "../../../assets/IranFlag.svg";
+import { useSelection } from "../../../utils/SelectionContext";
 
-const LpList = ({ selected }) => {
-  const prevSelectedItem = useRef(null);
+const LpList = () => {
+  const { selected, setSelected } = useSelection();
+
   const [sender, setSender] = useState("");
   const handleSender = (event) => {
     setSender(event.target.value);
@@ -46,10 +48,8 @@ const LpList = ({ selected }) => {
     setPursuitReason(event.target.value);
   };
 
-  const [selectedIndex, setSelectedIndex] = useState(null);
-  const handleListItemClick = (index) => {
-    setSelectedIndex(index);
-    prevSelectedItem.current = filteredList[index];
+  const handleListItemClick = (id) => {
+    setSelected(id);
   };
 
   const filteredList = fakeData.filter(
@@ -58,28 +58,11 @@ const LpList = ({ selected }) => {
       (pursuitReason === "" || car.pursuitReason === pursuitReason)
   );
 
-  if (prevSelectedItem.current) {
-    // Find the index of the previously selected item in the new filteredList
-    const newIndex = filteredList.findIndex(
-      (item) => item === prevSelectedItem.current
-    );
-
-    if (newIndex !== -1 && newIndex !== selectedIndex) {
-      setSelectedIndex(newIndex); // Update to the new index
-    } else if (newIndex === -1 && selectedIndex !== null) {
-      setSelectedIndex(null); // Reset if the item is no longer in the list
-      prevSelectedItem.current = null;
-    }
-    console.log("newIndex:", newIndex, "index:", selectedIndex);
-  }
-
   useEffect(() => {
-    if (selectedIndex !== null) {
-      selected(filteredList[selectedIndex]);
-    } else {
-      selected(null);
+    if (selected !== null && !filteredList.some((car) => car.id === selected)) {
+      setSelected(null);
     }
-  }, [selectedIndex, filteredList]);
+  }, [filteredList, selected]);
 
   return (
     <Grow in>
@@ -278,12 +261,12 @@ const LpList = ({ selected }) => {
                 },
               }}
             >
-              {filteredList.map((car, index) => {
+              {filteredList.map((car) => {
                 return (
                   <ListItem alignItems="flex-start" disableGutters>
                     <ListItemButton
-                      selected={selectedIndex === index}
-                      onClick={() => handleListItemClick(index)}
+                      selected={selected === car.id}
+                      onClick={() => handleListItemClick(car.id)}
                     >
                       <Stack
                         direction="column"

@@ -5,17 +5,20 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import React from "react";
+import { fakeData } from "../../../data/fakeData";
+import { useSelection } from "../../../utils/SelectionContext";
 
-const DataDisplay = ({ selected }) => {
-  console.log(selected);
+const DataDisplay = () => {
+  const { selected } = useSelection();
+  const selectedObject = fakeData.find((object) => object.id === selected);
+
   if (!selected) return <div>داده ای برای نمایش نیست</div>;
   return (
     <Paper elevation={2}>
       <Card>
         <CardContent>
           <Typography>محل عبور</Typography>
-          <Typography>{selected.passageWay}</Typography>
+          <Typography>{selectedObject.passageWay}</Typography>
         </CardContent>
       </Card>
     </Paper>
