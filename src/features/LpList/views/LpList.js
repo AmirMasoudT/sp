@@ -233,6 +233,7 @@ const LpList = () => {
               },
               "& .Mui-selected:hover": {
                 bgcolor: "var(--mui-palette-secondary-dark) !important",
+                color: "var(--mui-palette-primary-dark) !important",
               },
             }}
             subheader={
@@ -267,6 +268,7 @@ const LpList = () => {
                     <ListItemButton
                       selected={selected === car.id}
                       onClick={() => handleListItemClick(car.id)}
+                      sx={{ borderRadius: 2 }}
                     >
                       <Stack
                         direction="column"

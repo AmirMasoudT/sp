@@ -11,11 +11,14 @@ const theme = createTheme({
   palette: {
     primary: {
       // main: "#002709",
-      main: "#003e27",
+      main: "#194119",
     },
     secondary: {
-      main: "#b0eab1",
+      main: "#B0EBB1",
       // main: "#bfcea8",
+    },
+    third: {
+      main: "#AAC0AA",
     },
   },
   typography: {

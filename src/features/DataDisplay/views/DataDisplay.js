@@ -2,6 +2,10 @@ import {
   Card,
   CardContent,
   dividerClasses,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
   Paper,
   Typography,
 } from "@mui/material";
@@ -15,12 +19,12 @@ const DataDisplay = () => {
   if (!selected) return <div>داده ای برای نمایش نیست</div>;
   return (
     <Paper elevation={2}>
-      <Card>
-        <CardContent>
-          <Typography>محل عبور</Typography>
-          <Typography>{selectedObject.passageWay}</Typography>
-        </CardContent>
-      </Card>
+      <List>
+        <ListItem>
+          <ListItemAvatar></ListItemAvatar>
+          <ListItemText></ListItemText>
+        </ListItem>
+      </List>
     </Paper>
   );
 };
