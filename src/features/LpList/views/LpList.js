@@ -26,9 +26,10 @@ import {
   Typography,
 } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import CarCrashIcon from "@mui/icons-material/CarCrash";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import SouthAmericaIcon from "@mui/icons-material/SouthAmerica";
+import WarningIcon from "@mui/icons-material/Warning";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import DirectionsIcon from "@mui/icons-material/Directions";
 import LinkedCameraIcon from "@mui/icons-material/LinkedCamera";
 import { useEffect, useState } from "react";
 import FilterSelect from "../../../components/FilterSelect";
@@ -383,7 +384,7 @@ const LpList = () => {
                           alignItems="center"
                           spacing={0.5}
                         >
-                          <CarCrashIcon fontSize="2px" />
+                          <WarningIcon fontSize="2px" />
                           <ListItemText
                             primary={car.pursuitReason}
                             primaryTypographyProps={{ fontSize: "0.7rem" }}
@@ -394,7 +395,7 @@ const LpList = () => {
                           alignItems="center"
                           spacing={0.5}
                         >
-                          <SouthAmericaIcon fontSize="2px" />
+                          <LocationCityIcon fontSize="2px" />
                           <ListItemText
                             primary={car.passageCity}
                             primaryTypographyProps={{ fontSize: "0.7rem" }}
@@ -405,7 +406,7 @@ const LpList = () => {
                           alignItems="center"
                           spacing={0.5}
                         >
-                          <LinkedCameraIcon fontSize="2px" />
+                          <CameraAltIcon fontSize="2px" />
                           <ListItemText
                             primary={car.senderCam}
                             primaryTypographyProps={{ fontSize: "0.7rem" }}
@@ -416,7 +417,7 @@ const LpList = () => {
                           alignItems="center"
                           spacing={0.5}
                         >
-                          <LocationOnIcon fontSize="2px" />
+                          <DirectionsIcon fontSize="2px" />
                           <ListItemText
                             primary={car.passageWay}
                             primaryTypographyProps={{ fontSize: "0.7rem" }}

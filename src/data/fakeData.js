@@ -17,6 +17,9 @@ export const fakeData = [
     cityCode: "01",
     camCode: "0123456",
     delay: 15,
+    speed: 80,
+    passageDate: "1401/06/01",
+    checkingStation: "ایستگاه 1",
   },
   {
     id: 2,
@@ -36,6 +39,9 @@ export const fakeData = [
     cityCode: "02",
     camCode: "0212345",
     delay: 25,
+    speed: 120,
+    passageDate: "1401/07/01",
+    checkingStation: "ایستگاه 2",
   },
   {
     id: 3,
@@ -55,6 +61,9 @@ export const fakeData = [
     cityCode: "03",
     camCode: "0312345",
     delay: 12,
+    speed: 95,
+    passageDate: "1402/01/10",
+    checkingStation: "ایستگاه 3",
   },
   {
     id: 4,
@@ -74,6 +83,9 @@ export const fakeData = [
     cityCode: "04",
     camCode: "0412345",
     delay: 35,
+    speed: 60,
+    passageDate: "1403/04/01",
+    checkingStation: "ایستگاه 4",
   },
   {
     id: 5,
@@ -93,6 +105,9 @@ export const fakeData = [
     cityCode: "05",
     camCode: "0512345",
     delay: 18,
+    speed: 70,
+    passageDate: "1402/09/01",
+    checkingStation: "ایستگاه 5",
   },
   {
     id: 6,
@@ -112,6 +127,9 @@ export const fakeData = [
     cityCode: "06",
     camCode: "0612345",
     delay: 45,
+    speed: 110,
+    passageDate: "1401/12/10",
+    checkingStation: "ایستگاه 6",
   },
   {
     id: 7,
@@ -131,6 +149,9 @@ export const fakeData = [
     cityCode: "07",
     camCode: "0712345",
     delay: 22,
+    speed: 85,
+    passageDate: "1402/03/01",
+    checkingStation: "ایستگاه 7",
   },
   {
     id: 8,
@@ -150,6 +171,9 @@ export const fakeData = [
     cityCode: "08",
     camCode: "0812345",
     delay: 32,
+    speed: 75,
+    passageDate: "1402/05/01",
+    checkingStation: "ایستگاه 8",
   },
   {
     id: 9,
@@ -169,6 +193,9 @@ export const fakeData = [
     cityCode: "09",
     camCode: "0912345",
     delay: 40,
+    speed: 65,
+    passageDate: "1403/02/01",
+    checkingStation: "ایستگاه 9",
   },
   {
     id: 10,
@@ -188,6 +215,9 @@ export const fakeData = [
     cityCode: "10",
     camCode: "1012345",
     delay: 28,
+    speed: 50,
+    passageDate: "1401/11/01",
+    checkingStation: "ایستگاه 10",
   },
   {
     id: 11,
@@ -207,6 +237,9 @@ export const fakeData = [
     cityCode: "04",
     camCode: "0412345",
     delay: 18,
+    speed: 90,
+    passageDate: "1402/07/01",
+    checkingStation: "ایستگاه 11",
   },
   {
     id: 12,
@@ -226,6 +259,9 @@ export const fakeData = [
     cityCode: "01",
     camCode: "0112345",
     delay: 50,
+    speed: 100,
+    passageDate: "1402/08/01",
+    checkingStation: "ایستگاه 12",
   },
   {
     id: 13,
@@ -245,6 +281,9 @@ export const fakeData = [
     cityCode: "02",
     camCode: "0212345",
     delay: 36,
+    speed: 55,
+    passageDate: "1403/03/01",
+    checkingStation: "ایستگاه 13",
   },
   {
     id: 14,
@@ -264,6 +303,9 @@ export const fakeData = [
     cityCode: "05",
     camCode: "0512345",
     delay: 27,
+    speed: 75,
+    passageDate: "1402/10/01",
+    checkingStation: "ایستگاه 14",
   },
   {
     id: 15,
@@ -283,6 +325,9 @@ export const fakeData = [
     cityCode: "03",
     camCode: "0312345",
     delay: 44,
+    speed: 85,
+    passageDate: "1402/11/01",
+    checkingStation: "ایستگاه 15",
   },
   {
     id: 16,
@@ -302,6 +347,9 @@ export const fakeData = [
     cityCode: "01",
     camCode: "0112346",
     delay: 20,
+    speed: 60,
+    passageDate: "1403/01/01",
+    checkingStation: "ایستگاه 16",
   },
   {
     id: 17,
@@ -321,6 +369,9 @@ export const fakeData = [
     cityCode: "11",
     camCode: "1112345",
     delay: 33,
+    speed: 70,
+    passageDate: "1402/09/01",
+    checkingStation: "ایستگاه 17",
   },
   {
     id: 18,
@@ -340,6 +391,9 @@ export const fakeData = [
     cityCode: "05",
     camCode: "0512346",
     delay: 29,
+    speed: 80,
+    passageDate: "1403/05/01",
+    checkingStation: "ایستگاه 18",
   },
   {
     id: 19,
@@ -359,6 +413,9 @@ export const fakeData = [
     cityCode: "03",
     camCode: "0312347",
     delay: 12,
+    speed: 55,
+    passageDate: "1403/06/01",
+    checkingStation: "ایستگاه 19",
   },
   {
     id: 20,
@@ -378,6 +435,9 @@ export const fakeData = [
     cityCode: "02",
     camCode: "0212348",
     delay: 18,
+    speed: 65,
+    passageDate: "1403/07/01",
+    checkingStation: "ایستگاه 20",
   },
   {
     id: 21,
@@ -397,6 +457,9 @@ export const fakeData = [
     cityCode: "08",
     camCode: "0812346",
     delay: 54,
+    speed: 90,
+    passageDate: "1402/11/01",
+    checkingStation: "ایستگاه 21",
   },
   {
     id: 22,
@@ -416,6 +479,9 @@ export const fakeData = [
     cityCode: "04",
     camCode: "0412346",
     delay: 45,
+    speed: 100,
+    passageDate: "1403/08/01",
+    checkingStation: "ایستگاه 22",
   },
   {
     id: 23,
@@ -435,6 +501,9 @@ export const fakeData = [
     cityCode: "06",
     camCode: "0612345",
     delay: 22,
+    speed: 75,
+    passageDate: "1403/02/01",
+    checkingStation: "ایستگاه 23",
   },
   {
     id: 24,
@@ -454,6 +523,9 @@ export const fakeData = [
     cityCode: "10",
     camCode: "1012346",
     delay: 14,
+    speed: 60,
+    passageDate: "1403/06/01",
+    checkingStation: "ایستگاه 24",
   },
   {
     id: 25,
@@ -473,5 +545,8 @@ export const fakeData = [
     cityCode: "09",
     camCode: "0912346",
     delay: 37,
+    speed: 85,
+    passageDate: "1403/03/01",
+    checkingStation: "ایستگاه 25",
   },
 ];
