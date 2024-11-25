@@ -16,7 +16,7 @@ const ShowClock = () => {
   }, []);
 
   return (
-    <Stack direction="row" justifyContent="space-between" width="120px">
+    <Stack direction="row" justifyContent="space-between" width="150px">
       <div>{today}</div>
       <div>
         {time.toLocaleString("fa-IR", {

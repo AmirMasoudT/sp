@@ -34,8 +34,8 @@ import LinkedCameraIcon from "@mui/icons-material/LinkedCamera";
 import { useEffect, useState } from "react";
 import FilterSelect from "../../../components/FilterSelect";
 import Rtl from "../../../utils/Rtl";
-import IranFlag from "../../../assets/IranFlag.svg";
 import { useSelection } from "../../../utils/SelectionContext";
+import LicensePlate from "../../../components/LicensePlate";
 
 const LpList = () => {
   const { selected, setSelected } = useSelection();
@@ -286,88 +286,7 @@ const LpList = () => {
                           },
                         }}
                       >
-                        <Box
-                          width="125px"
-                          mb={0.5}
-                          sx={{
-                            bgcolor: "#ffffff",
-                            border: 2,
-                            borderColor: "#000000",
-                            borderRadius: "3px",
-                            fontWeight: "600",
-                            color: "#000000",
-                          }}
-                        >
-                          <Stack
-                            direction="row-reverse"
-                            justifyContent="space-between"
-                          >
-                            <Stack
-                              direction="column"
-                              justifyContent="space-between"
-                              sx={{
-                                bgcolor: "blue",
-                                width: "11%",
-                                p: 0.2,
-                              }}
-                            >
-                              <img width="100%" src={IranFlag} />
-                              <Typography
-                                sx={{
-                                  color: "#ffffff",
-                                  fontSize: "0.2rem",
-                                  textAlign: "end",
-                                }}
-                              >
-                                I.R. IRAN
-                              </Typography>
-                            </Stack>
-                            <Stack
-                              alignSelf="center"
-                              direction="row-reverse"
-                              justifyContent="space-around"
-                              width="100%"
-                              px={0.5}
-                              letterSpacing={2}
-                            >
-                              <span>
-                                {Number(
-                                  car.licenseNo.split(/\s/)[0]
-                                ).toLocaleString("fa-IR")}
-                              </span>
-                              <span>{car.licenseNo.split(/\s/)[1]}</span>
-                              <span>
-                                {Number(
-                                  car.licenseNo.split(/\s/)[2]
-                                ).toLocaleString("fa-IR")}
-                              </span>
-                            </Stack>
-                            <Stack
-                              sx={{ borderRight: 1, px: 0.3, pb: 0.6 }}
-                              spacing={0.5}
-                              alignItems="center"
-                            >
-                              <Typography
-                                fontSize="0.5rem"
-                                fontWeight="inherit"
-                                sx={{
-                                  transform: "scaleY(0.5) translateY(-3px)",
-                                }}
-                              >
-                                ایران
-                              </Typography>
-                              <Typography
-                                fontSize="0.8rem"
-                                fontWeight="inherit"
-                                lineHeight="0.1"
-                              >
-                                {Number(
-                                  car.licenseNo.split(/\s/)[4]
-                                ).toLocaleString("fa-IR")}
-                              </Typography>
-                            </Stack>
-                          </Stack>
-                        </Box>
+                        <LicensePlate licenseNo={car.licenseNo} />
                         <Stack
                           direction="row"
                           alignItems="center"
