@@ -485,7 +485,7 @@ export const fakeData = [
   },
   {
     id: 23,
-    licenseNo: "33 ح 888 - 99",
+    licenseNo: "33 پ 888 - 99",
     travelTime: "14:30",
     pursuitReason: "حرکت مارپیچ",
     passageCity: "قم",

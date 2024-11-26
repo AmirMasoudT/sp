@@ -13,6 +13,7 @@ import {
   Divider,
   Zoom,
   Grow,
+  Grid2,
 } from "@mui/material";
 import { TransitionGroup } from "react-transition-group";
 
@@ -50,150 +51,170 @@ const DataDisplay = () => {
     );
   return (
     <Grow in timeout={500}>
-      <Paper elevation={2}>
-        <Rtl>
-          <List dense>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <DirectionsIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="محل عبور"
-                secondary={selectedObject.passageWay}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <LocationCityIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="محور عبور"
-                secondary={selectedObject.passageCity}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <AccessTimeIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="ساعت عبور"
-                secondary={selectedObject.travelTime}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <CameraAltIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="گروه دوربین"
-                secondary={selectedObject.senderCam}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <QrCodeIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="کد دوربین"
-                secondary={selectedObject.camCode}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <TimerIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="میزان تاخیر"
-                secondary={`${selectedObject.delay} ثانیه`}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <LocationOnIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="کد استان"
-                secondary={selectedObject.cityCode}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <SpeedIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="سرعت"
-                secondary={`${selectedObject.speed} کیلومتر بر ساعت`}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <CalendarMonthIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="تاریخ عبور"
-                secondary={selectedObject.passageDate}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <LocalPoliceIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="ایست بازرسی"
-                secondary={selectedObject.checkingStation}
-              />
-            </ListItem>
-
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: "primary.main" }}>
-                  <WarningIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="نوع تخلف"
-                secondary={
-                  <Box
-                    sx={{
-                      width: 20,
-                      height: 20,
-                      borderRadius: "50%",
-                      bgcolor: selectedObject.status,
-                    }}
+      <Paper elevation={2} sx={{ height: "100%" }}>
+        <Grid2 container>
+          <Grid2 size={6}>
+            <Rtl>
+              <List
+                dense
+                disablePadding
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  "& .MuiAvatar-root": {
+                    bgcolor: "primary.main",
+                    width: 35,
+                    height: 35,
+                  },
+                  "& .MuiListItem-root": {
+                    width: { xs: "100%", sm: "50%" },
+                    boxSizing: "border-box",
+                  },
+                }}
+              >
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <DirectionsIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="محل عبور"
+                    secondary={selectedObject.passageWay}
                   />
-                }
-              />
-            </ListItem>
-          </List>
-        </Rtl>
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <LocationCityIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="محور عبور"
+                    secondary={selectedObject.passageCity}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <AccessTimeIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="ساعت عبور"
+                    secondary={selectedObject.travelTime}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <CameraAltIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="گروه دوربین"
+                    secondary={selectedObject.senderCam}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <QrCodeIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="کد دوربین"
+                    secondary={selectedObject.camCode}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <TimerIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="میزان تاخیر"
+                    secondary={`${selectedObject.delay} ثانیه`}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <LocationOnIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="کد استان"
+                    secondary={selectedObject.cityCode}
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <SpeedIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="سرعت"
+                    secondary={`${selectedObject.speed} کیلومتر بر ساعت`}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <CalendarMonthIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="تاریخ عبور"
+                    secondary={selectedObject.passageDate}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <LocalPoliceIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="ایست بازرسی"
+                    secondary={selectedObject.checkingStation}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <WarningIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="نوع تخلف"
+                    secondary={
+                      <Box
+                        sx={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: "50%",
+                          bgcolor: selectedObject.status,
+                        }}
+                      />
+                    }
+                  />
+                </ListItem>
+              </List>
+            </Rtl>
+          </Grid2>
+        </Grid2>
       </Paper>
     </Grow>
   );

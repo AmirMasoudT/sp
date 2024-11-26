@@ -52,7 +52,7 @@ const LicensePlate = ({ licenseNo }) => {
           <img width="100%" src={IranFlag} />
           <Typography
             sx={{
-              color: "#ffffff",
+              color: "#fff",
               fontSize: "0.2rem",
               textAlign: "end",
             }}
@@ -60,11 +60,10 @@ const LicensePlate = ({ licenseNo }) => {
             I.R. IRAN
           </Typography>
         </Stack>
-        {letter === "ت" && (
-          <span sx={{ position: "relative", top: 0, left: 0 }}>TAXI</span>
-        )}
+
         <Stack
-          alignSelf="center"
+          fontSize="1rem"
+          alignSelf="end"
           direction="row-reverse"
           justifyContent="space-around"
           width="100%"
@@ -72,7 +71,25 @@ const LicensePlate = ({ licenseNo }) => {
           letterSpacing={2}
         >
           <span>{firstNums}</span>
-          <span>{letter}</span>
+          <span>
+            {letter === "ت" && (
+              <Typography
+                component="span"
+                sx={{
+                  position: "absolute",
+                  top: 7,
+                  left: 82,
+                  fontSize: "0.5rem",
+                  fontFamily: "sans-serif",
+                  transform: "scaleY(0.7)",
+                  letterSpacing: 0,
+                }}
+              >
+                TAXI
+              </Typography>
+            )}
+            {letter}
+          </span>
           <span>{lastNums}</span>
         </Stack>
         <Stack

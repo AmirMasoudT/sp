@@ -9,12 +9,15 @@ function App() {
   return (
     <Box>
       <Header />
-      <Grid2 container>
+      <Grid2 container sx={{ height: "calc(100vh - 80px)" }}>
         <SelectionProvider>
-          <Grid2 item width={{ md: "40%", lg: "30%" }}>
+          <Grid2 item sx={{ width: { md: "40%", lg: "30%" }, height: "100%" }}>
             <LpList />
           </Grid2>
-          <Grid2 item sx={{ p: 1.5 }} width={{ md: "60%", lg: "70%" }}>
+          <Grid2
+            item
+            sx={{ p: 1.5, width: { md: "60%", lg: "70%" }, height: "100%" }}
+          >
             <DataDisplay />
           </Grid2>
         </SelectionProvider>

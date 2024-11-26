@@ -67,7 +67,7 @@ const LpList = () => {
 
   return (
     <Grow in>
-      <Stack height={"87vh"}>
+      <Stack sx={{ height: "100%" }}>
         <FilterSelect
           id="listSender"
           value={sender}
