@@ -14,6 +14,13 @@ import {
   Zoom,
   Grow,
   Grid2,
+  TableContainer,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  tableCellClasses,
 } from "@mui/material";
 import { TransitionGroup } from "react-transition-group";
 
@@ -32,7 +39,29 @@ import SpeedIcon from "@mui/icons-material/Speed";
 import { fakeData } from "../../../data/fakeData";
 import { useSelection } from "../../../utils/SelectionContext";
 import Rtl from "../../../utils/Rtl";
-import { Stack } from "@mui/system";
+import { Stack, styled } from "@mui/system";
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-of-type(odd)": {
+    backgroundColor: theme.palette.secondary.main,
+  },
+  "&:nth-of-type(even)": {
+    backgroundColor: theme.palette.secondary.light,
+  },
+  "&:last-child td, &:last-child th": {
+    border: 0,
+  },
+}));
 
 const DataDisplay = () => {
   const { selected } = useSelection();
@@ -51,9 +80,9 @@ const DataDisplay = () => {
     );
   return (
     <Grow in timeout={500}>
-      <Paper elevation={2} sx={{ height: "100%" }}>
+      <Paper elevation={2} sx={{ height: "100%", p: 1 }}>
         <Grid2 container>
-          <Grid2 size={6}>
+          <Grid2 size={12}>
             <Rtl>
               <List
                 dense
@@ -61,14 +90,24 @@ const DataDisplay = () => {
                 sx={{
                   display: "flex",
                   flexWrap: "wrap",
+                  gap: 1,
+                  "& .MuiListItemAvatar-root": {
+                    minWidth: 40,
+                  },
                   "& .MuiAvatar-root": {
                     bgcolor: "primary.main",
                     width: 35,
                     height: 35,
                   },
                   "& .MuiListItem-root": {
-                    width: { xs: "100%", sm: "50%" },
+                    p: 0.5,
+                    bgcolor: "secondary.main",
+                    borderRadius: 1,
+                    width: "190px",
                     boxSizing: "border-box",
+                  },
+                  "& .MuiListItemText-root": {
+                    m: 0,
                   },
                 }}
               >
@@ -103,8 +142,8 @@ const DataDisplay = () => {
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText
-                    primary="ساعت عبور"
-                    secondary={selectedObject.travelTime}
+                    primary="زمان عبور"
+                    secondary={`${selectedObject.travelTime} - ${selectedObject.passageDate}`}
                   />
                 </ListItem>
 
@@ -166,19 +205,6 @@ const DataDisplay = () => {
                     secondary={`${selectedObject.speed} کیلومتر بر ساعت`}
                   />
                 </ListItem>
-
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar>
-                      <CalendarMonthIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary="تاریخ عبور"
-                    secondary={selectedObject.passageDate}
-                  />
-                </ListItem>
-
                 <ListItem>
                   <ListItemAvatar>
                     <Avatar>
@@ -214,6 +240,204 @@ const DataDisplay = () => {
               </List>
             </Rtl>
           </Grid2>
+
+          <Grid2 size={6}>
+            <Typography variant="h6">Image</Typography>
+          </Grid2>
+          <Grid2 size={6}>
+            <Typography variant="h6">Map</Typography>
+          </Grid2>
+
+          <Rtl>
+            <Grid2>
+              <TableContainer component={Paper}>
+                <Table
+                  sx={{ width: "100%" }}
+                  size="small"
+                  aria-label="a dense table"
+                >
+                  <TableHead>
+                    <StyledTableRow>
+                      <StyledTableCell align="center">
+                        اطلاعات شماره گذاری
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  </TableHead>
+                  <TableBody>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          سیستم خودرو: {selectedObject.manufacture}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          رنگ خودرو: {selectedObject.color}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          تیپ خودرو: {selectedObject.name}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">کاربری خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          مدل خودرو: {selectedObject.model}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">شماره شاسی: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Grid2>
+            <Grid2>
+              <TableContainer component={Paper}>
+                <Table
+                  sx={{ width: "100%" }}
+                  size="small"
+                  aria-label="a dense table"
+                >
+                  <TableHead>
+                    <StyledTableRow>
+                      <StyledTableCell align="center">
+                        جزئیات تحت تعقیب
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  </TableHead>
+                  <TableBody>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">سیستم خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">رنگ خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">تیپ خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">کاربری خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          علت تعقیب: {selectedObject.pursuitReason}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          نوع دستور: {selectedObject.actionAnnounced}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          تاریخ دستور: {selectedObject.actionAnnouncedDate}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Grid2>
+            <Grid2>
+              <TableContainer component={Paper}>
+                <Table
+                  sx={{ width: "100%" }}
+                  size="small"
+                  aria-label="a dense table"
+                >
+                  <TableHead>
+                    <StyledTableRow>
+                      <StyledTableCell align="center">
+                        لیست ترددهای انجام شده اخیر
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell align="center">ردیف</StyledTableCell>
+                      <StyledTableCell align="center">نوع تردد</StyledTableCell>
+                      <StyledTableCell align="center">محل تردد</StyledTableCell>
+                      <StyledTableCell align="center">
+                        زمان تردد
+                      </StyledTableCell>
+                      <StyledTableCell align="center">سرعت</StyledTableCell>
+                    </StyledTableRow>
+                  </TableHead>
+                  <TableBody>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">سیستم خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">رنگ خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">تیپ خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">کاربری خودرو: -</Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          علت تعقیب: {selectedObject.pursuitReason}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          نوع دستور: {selectedObject.actionAnnounced}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow>
+                      <StyledTableCell>
+                        <Typography variant="body2">
+                          تاریخ دستور: {selectedObject.actionAnnouncedDate}
+                        </Typography>
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Grid2>
+          </Rtl>
         </Grid2>
       </Paper>
     </Grow>

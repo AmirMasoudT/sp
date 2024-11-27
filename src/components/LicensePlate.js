@@ -93,7 +93,7 @@ const LicensePlate = ({ licenseNo }) => {
           <span>{lastNums}</span>
         </Stack>
         <Stack
-          sx={{ borderRight: 1, px: 0.3, pb: 0.6 }}
+          sx={{ width: "25%", borderRight: 1 }}
           spacing={0.5}
           alignItems="center"
         >
