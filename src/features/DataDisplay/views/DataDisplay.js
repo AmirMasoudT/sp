@@ -81,7 +81,7 @@ const DataDisplay = () => {
   return (
     <Grow in timeout={500}>
       <Paper elevation={2} sx={{ height: "100%", p: 1 }}>
-        <Grid2 container>
+        <Grid2 container spacing={1}>
           <Grid2 size={12}>
             <Rtl>
               <List
@@ -91,6 +91,7 @@ const DataDisplay = () => {
                   display: "flex",
                   flexWrap: "wrap",
                   gap: 1,
+                  justifyContent: "space-between",
                   "& .MuiListItemAvatar-root": {
                     minWidth: 40,
                   },
@@ -242,14 +243,14 @@ const DataDisplay = () => {
           </Grid2>
 
           <Grid2 size={6}>
-            <Typography variant="h6">Image</Typography>
+            <img src={selectedObject.imageUrl} alt="car" width="50%" />
           </Grid2>
           <Grid2 size={6}>
             <Typography variant="h6">Map</Typography>
           </Grid2>
 
           <Rtl>
-            <Grid2>
+            <Grid2 size={2}>
               <TableContainer component={Paper}>
                 <Table
                   sx={{ width: "100%" }}
@@ -306,7 +307,7 @@ const DataDisplay = () => {
                 </Table>
               </TableContainer>
             </Grid2>
-            <Grid2>
+            <Grid2 size={3}>
               <TableContainer component={Paper}>
                 <Table
                   sx={{ width: "100%" }}
@@ -367,7 +368,7 @@ const DataDisplay = () => {
                 </Table>
               </TableContainer>
             </Grid2>
-            <Grid2>
+            <Grid2 size={7}>
               <TableContainer component={Paper}>
                 <Table
                   sx={{ width: "100%" }}
@@ -376,7 +377,7 @@ const DataDisplay = () => {
                 >
                   <TableHead>
                     <StyledTableRow>
-                      <StyledTableCell align="center">
+                      <StyledTableCell align="center" colSpan={5}>
                         لیست ترددهای انجام شده اخیر
                       </StyledTableCell>
                     </StyledTableRow>
@@ -391,48 +392,41 @@ const DataDisplay = () => {
                     </StyledTableRow>
                   </TableHead>
                   <TableBody>
-                    <StyledTableRow>
-                      <StyledTableCell>
-                        <Typography variant="body2">سیستم خودرو: -</Typography>
-                      </StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                      <StyledTableCell>
-                        <Typography variant="body2">رنگ خودرو: -</Typography>
-                      </StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                      <StyledTableCell>
-                        <Typography variant="body2">تیپ خودرو: -</Typography>
-                      </StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                      <StyledTableCell>
-                        <Typography variant="body2">کاربری خودرو: -</Typography>
-                      </StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                      <StyledTableCell>
-                        <Typography variant="body2">
-                          علت تعقیب: {selectedObject.pursuitReason}
-                        </Typography>
-                      </StyledTableCell>
-                    </StyledTableRow>
-
-                    <StyledTableRow>
-                      <StyledTableCell>
-                        <Typography variant="body2">
-                          نوع دستور: {selectedObject.actionAnnounced}
-                        </Typography>
-                      </StyledTableCell>
-                    </StyledTableRow>
-                    <StyledTableRow>
-                      <StyledTableCell>
-                        <Typography variant="body2">
-                          تاریخ دستور: {selectedObject.actionAnnouncedDate}
-                        </Typography>
-                      </StyledTableCell>
-                    </StyledTableRow>
+                    {selectedObject.recentlySeen.map((item, index) => (
+                      <StyledTableRow key={index + 1}>
+                        <StyledTableCell>
+                          <Typography variant="body2" align="center">
+                            {index + 1}
+                          </Typography>
+                        </StyledTableCell>
+                        <StyledTableCell align="center">
+                          <Box
+                            sx={{
+                              display: "inline-block",
+                              width: 20,
+                              height: 20,
+                              borderRadius: "50%",
+                              bgcolor: item.status,
+                            }}
+                          />
+                        </StyledTableCell>
+                        <StyledTableCell>
+                          <Typography variant="body2" align="center">
+                            {item.passageWay}
+                          </Typography>
+                        </StyledTableCell>
+                        <StyledTableCell>
+                          <Typography variant="body2" align="center">
+                            {item.travelTime}
+                          </Typography>
+                        </StyledTableCell>
+                        <StyledTableCell>
+                          <Typography variant="body2" align="center">
+                            {item.speed}
+                          </Typography>
+                        </StyledTableCell>
+                      </StyledTableRow>
+                    ))}
                   </TableBody>
                 </Table>
               </TableContainer>

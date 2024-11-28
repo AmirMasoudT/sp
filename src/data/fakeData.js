@@ -38,6 +38,7 @@ export const fakeData = [
         speed: 90,
       },
     ],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 2,
@@ -70,6 +71,7 @@ export const fakeData = [
         speed: 110,
       },
     ],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 3,
@@ -102,6 +104,7 @@ export const fakeData = [
         speed: 100,
       },
     ],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 4,
@@ -125,6 +128,7 @@ export const fakeData = [
     passageDate: "1403/04/01",
     checkingStation: "ایستگاه 4",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 5,
@@ -165,6 +169,7 @@ export const fakeData = [
         speed: 80,
       },
     ],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 6,
@@ -188,6 +193,7 @@ export const fakeData = [
     passageDate: "1401/12/10",
     checkingStation: "ایستگاه 6",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 7,
@@ -220,6 +226,7 @@ export const fakeData = [
         speed: 90,
       },
     ],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 8,
@@ -243,6 +250,7 @@ export const fakeData = [
     passageDate: "1402/05/01",
     checkingStation: "ایستگاه 8",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 9,
@@ -266,6 +274,7 @@ export const fakeData = [
     passageDate: "1403/02/01",
     checkingStation: "ایستگاه 9",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 10,
@@ -289,6 +298,7 @@ export const fakeData = [
     passageDate: "1401/11/01",
     checkingStation: "ایستگاه 10",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 11,
@@ -312,6 +322,7 @@ export const fakeData = [
     passageDate: "1402/07/01",
     checkingStation: "ایستگاه 11",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 12,
@@ -335,12 +346,13 @@ export const fakeData = [
     passageDate: "1402/08/01",
     checkingStation: "ایستگاه 12",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 13,
     licenseNo: "33 ج 333 - 33",
     travelTime: "09:00",
-    pursuitReason: "��صادفات قابل بررسی",
+    pursuitReason: "صادفات قابل بررسی",
     passageCity: "اصفهان",
     passageWay: "خروجی بلوار زاینده رود",
     senderCam: "پلاک خوان اصفهان",
@@ -358,6 +370,7 @@ export const fakeData = [
     passageDate: "1403/03/01",
     checkingStation: "ایستگاه 13",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 14,
@@ -381,6 +394,7 @@ export const fakeData = [
     passageDate: "1402/10/01",
     checkingStation: "ایستگاه 14",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 15,
@@ -404,6 +418,7 @@ export const fakeData = [
     passageDate: "1402/11/01",
     checkingStation: "ایستگاه 15",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 16,
@@ -427,6 +442,7 @@ export const fakeData = [
     passageDate: "1403/01/01",
     checkingStation: "ایستگاه 16",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 17,
@@ -450,6 +466,7 @@ export const fakeData = [
     passageDate: "1402/09/01",
     checkingStation: "ایستگاه 17",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 18,
@@ -473,6 +490,7 @@ export const fakeData = [
     passageDate: "1403/05/01",
     checkingStation: "ایستگاه 18",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 19,
@@ -496,6 +514,7 @@ export const fakeData = [
     passageDate: "1403/06/01",
     checkingStation: "ایستگاه 19",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 20,
@@ -519,6 +538,7 @@ export const fakeData = [
     passageDate: "1403/07/01",
     checkingStation: "ایستگاه 20",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 21,
@@ -542,6 +562,7 @@ export const fakeData = [
     passageDate: "1402/11/01",
     checkingStation: "ایستگاه 21",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 22,
@@ -565,6 +586,7 @@ export const fakeData = [
     passageDate: "1403/08/01",
     checkingStation: "ایستگاه 22",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 23,
@@ -588,6 +610,7 @@ export const fakeData = [
     passageDate: "1403/02/01",
     checkingStation: "ایستگاه 23",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 24,
@@ -611,6 +634,7 @@ export const fakeData = [
     passageDate: "1403/06/01",
     checkingStation: "ایستگاه 24",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
   {
     id: 25,
@@ -634,5 +658,6 @@ export const fakeData = [
     passageDate: "1403/03/01",
     checkingStation: "ایستگاه 25",
     recentlySeen: [],
+    imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
   },
 ];
