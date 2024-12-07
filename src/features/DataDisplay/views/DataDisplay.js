@@ -40,6 +40,7 @@ import { fakeData } from "../../../data/fakeData";
 import { useSelection } from "../../../utils/SelectionContext";
 import Rtl from "../../../utils/Rtl";
 import { Stack, styled } from "@mui/system";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -246,7 +247,27 @@ const DataDisplay = () => {
             <img src={selectedObject.imageUrl} alt="car" width="50%" />
           </Grid2>
           <Grid2 size={6}>
-            <Typography variant="h6">Map</Typography>
+            <MapContainer
+              center={[
+                selectedObject.location.lat,
+                selectedObject.location.lng,
+              ]}
+              zoom={13}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker
+                position={[
+                  selectedObject.location.lat,
+                  selectedObject.location.lng,
+                ]}
+              >
+                <Popup>This is a popup</Popup>
+              </Marker>
+            </MapContainer>
           </Grid2>
 
           <Rtl>

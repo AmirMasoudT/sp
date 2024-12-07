@@ -39,6 +39,7 @@ export const fakeData = [
       },
     ],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 35.6892, lng: 51.389 },
   },
   {
     id: 2,
@@ -72,6 +73,7 @@ export const fakeData = [
       },
     ],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 32.6546, lng: 51.668 },
   },
   {
     id: 3,
@@ -105,6 +107,7 @@ export const fakeData = [
       },
     ],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 36.2605, lng: 59.6168 },
   },
   {
     id: 4,
@@ -129,6 +132,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 4",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 29.5918, lng: 52.5837 },
   },
   {
     id: 5,
@@ -170,6 +174,7 @@ export const fakeData = [
       },
     ],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 38.0962, lng: 46.2738 },
   },
   {
     id: 6,
@@ -194,6 +199,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 6",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 34.6892, lng: 50.6892 },
   },
   {
     id: 7,
@@ -227,6 +233,7 @@ export const fakeData = [
       },
     ],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 36.892, lng: 50.892 },
   },
   {
     id: 8,
@@ -251,6 +258,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 8",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 36.892, lng: 50.892 },
   },
   {
     id: 9,
@@ -275,6 +283,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 9",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 35.6892, lng: 51.389 },
   },
   {
     id: 10,
@@ -299,6 +308,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 10",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 29.5918, lng: 52.5837 },
   },
   {
     id: 11,
@@ -323,6 +333,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 11",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 29.5918, lng: 52.5837 },
   },
   {
     id: 12,
@@ -347,6 +358,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 12",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 35.6892, lng: 51.389 },
   },
   {
     id: 13,
@@ -371,6 +383,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 13",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 32.6546, lng: 51.668 },
   },
   {
     id: 14,
@@ -395,6 +408,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 14",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 38.0962, lng: 46.2738 },
   },
   {
     id: 15,
@@ -419,6 +433,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 15",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 36.2605, lng: 59.6168 },
   },
   {
     id: 16,
@@ -443,6 +458,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 16",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 35.6892, lng: 51.389 },
   },
   {
     id: 17,
@@ -467,6 +483,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 17",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 37.0962, lng: 49.892 },
   },
   {
     id: 18,
@@ -491,6 +508,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 18",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 38.0962, lng: 46.2738 },
   },
   {
     id: 19,
@@ -515,6 +533,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 19",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 36.2605, lng: 59.6168 },
   },
   {
     id: 20,
@@ -539,6 +558,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 20",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 32.6546, lng: 51.668 },
   },
   {
     id: 21,
@@ -563,6 +583,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 21",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 36.892, lng: 50.892 },
   },
   {
     id: 22,
@@ -587,6 +608,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 22",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 29.5918, lng: 52.5837 },
   },
   {
     id: 23,
@@ -611,6 +633,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 23",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 34.6892, lng: 50.6892 },
   },
   {
     id: 24,
@@ -635,6 +658,7 @@ export const fakeData = [
     checkingStation: "ایستگاه 24",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 29.5918, lng: 52.5837 },
   },
   {
     id: 25,
@@ -659,5 +683,6 @@ export const fakeData = [
     checkingStation: "ایستگاه 25",
     recentlySeen: [],
     imageUrl: "https://fakeimg.pl/600x600/cccccc/909090",
+    location: { lat: 35.6892, lng: 51.389 },
   },
 ];
