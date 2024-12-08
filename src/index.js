@@ -10,27 +10,29 @@ import VazirThin from "./fonts/Vazir-Thin.woff2";
 import VazirMedium from "./fonts/Vazir-Medium.woff2";
 import { faIR } from "@mui/material/locale";
 
+let theme = createTheme({
+  cssVariables: true,
+  direction: "rtl",
+  palette: {
+    primary: {
+      main: "#194119",
+    },
+    secondary: {
+      main: "#B0EBB1",
+    },
+    third: {
+      main: "#AAC0AA",
+    },
+  },
+  typography: {
+    fontFamily: "Vazir",
+    fontSize: 12,
+  },
+});
+
 const theme = createTheme(
   {
-    cssVariables: true,
-    direction: "rtl",
-    palette: {
-      primary: {
-        // main: "#002709",
-        main: "#194119",
-      },
-      secondary: {
-        main: "#B0EBB1",
-        // main: "#bfcea8",
-      },
-      third: {
-        main: "#AAC0AA",
-      },
-    },
-    typography: {
-      fontFamily: "Vazir",
-      fontSize: 12,
-    },
+    ...baseTheme,
     components: {
       MuiCssBaseline: {
         styleOverrides: `
@@ -61,13 +63,19 @@ const theme = createTheme(
           font-weight: 500;
           src: url(${VazirMedium});
         }
-          
+
         @font-face {
           font-family: 'Vazir';
           font-style: normal;
           font-weight: 700;
           src: url(${VazirBold});
         }
+
+        * {
+          scrollbar-width: thin;
+          scrollbar-color: ${baseTheme.palette.primary.main} ${baseTheme.palette.secondary.main};
+        }
+
       `,
       },
     },

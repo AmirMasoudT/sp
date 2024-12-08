@@ -7,7 +7,7 @@ import { SelectionProvider } from "./utils/SelectionContext";
 
 function App() {
   return (
-    <Box>
+    <Box sx={{ overflow: "hidden" }}>
       <Header />
       <Grid2 container sx={{ height: "calc(100vh - 80px)" }}>
         <SelectionProvider>
