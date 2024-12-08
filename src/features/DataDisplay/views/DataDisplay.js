@@ -71,7 +71,14 @@ const DataDisplay = () => {
   if (!selected)
     return (
       <Zoom in>
-        <Paper elevation={2} sx={{ width: "100%", height: "100%" }}>
+        <Paper
+          elevation={2}
+          sx={{
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+          }}
+        >
           <Stack alignItems="center" justifyContent="center" height="100%">
             <DatasetIcon sx={{ fontSize: 60, color: "text.disabled", mb: 2 }} />
             <Typography variant="h6">داده ای برای نمایش نیست</Typography>
@@ -82,7 +89,7 @@ const DataDisplay = () => {
   return (
     <Grow in timeout={500}>
       <Paper elevation={2} sx={{ height: "100%", p: 1 }}>
-        <Grid2 container spacing={1}>
+        <Grid2 container spacing={1} sx={{ height: "100%" }}>
           <Grid2 size={12}>
             <Rtl>
               <List
@@ -243,8 +250,13 @@ const DataDisplay = () => {
             </Rtl>
           </Grid2>
 
-          <Grid2 size={6}>
-            <img src={selectedObject.imageUrl} alt="car" width="50%" />
+          <Grid2 sx={{ height: 1 / 2 }} size={6}>
+            <img
+              src={selectedObject.imageUrl}
+              alt="car"
+              width="100%"
+              height="100%"
+            />
           </Grid2>
           <Grid2 size={6}>
             <MapContainer
@@ -272,11 +284,12 @@ const DataDisplay = () => {
 
           <Rtl>
             <Grid2 size={2}>
-              <TableContainer component={Paper}>
+              <TableContainer component={Paper} sx={{ height: 4 / 5 }}>
                 <Table
                   sx={{ width: "100%" }}
                   size="small"
                   aria-label="a dense table"
+                  stickyHeader
                 >
                   <TableHead>
                     <StyledTableRow>
@@ -329,11 +342,12 @@ const DataDisplay = () => {
               </TableContainer>
             </Grid2>
             <Grid2 size={3}>
-              <TableContainer component={Paper}>
+              <TableContainer component={Paper} sx={{ height: 4 / 5 }}>
                 <Table
                   sx={{ width: "100%" }}
                   size="small"
                   aria-label="a dense table"
+                  stickyHeader
                 >
                   <TableHead>
                     <StyledTableRow>
@@ -390,11 +404,12 @@ const DataDisplay = () => {
               </TableContainer>
             </Grid2>
             <Grid2 size={7}>
-              <TableContainer component={Paper}>
+              <TableContainer component={Paper} sx={{ height: 4 / 5 }}>
                 <Table
                   sx={{ width: "100%" }}
                   size="small"
                   aria-label="a dense table"
+                  stickyHeader
                 >
                   <TableHead>
                     <StyledTableRow>
