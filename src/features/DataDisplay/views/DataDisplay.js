@@ -41,6 +41,7 @@ import { useSelection } from "../../../utils/SelectionContext";
 import Rtl from "../../../utils/Rtl";
 import { Stack, styled } from "@mui/system";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { useEffect, useRef } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -67,6 +68,21 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const DataDisplay = () => {
   const { selected } = useSelection();
   const selectedObject = fakeData.find((object) => object.id === selected);
+  // Create a new component to handle map movements
+  function MapController({ selectedObject }) {
+    const map = useMap(); // useMap hook gives us access to the Leaflet map instance
+    
+    useEffect(() => {
+      if (selectedObject) {
+        map.flyTo(
+          [selectedObject.location.lat, selectedObject.location.lng],
+          15, { duration: 0.5 }
+        );
+      }
+    }, [selectedObject, map]);
+    
+    return null;
+  }
 
   if (!selected)
     return (
@@ -264,9 +280,11 @@ const DataDisplay = () => {
                 selectedObject.location.lat,
                 selectedObject.location.lng,
               ]}
-              zoom={13}
+              zoom={15}
+
               style={{ width: "100%", height: "100%" }}
             >
+              <MapController selectedObject={selectedObject} />
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -10,7 +10,7 @@ import VazirThin from "./fonts/Vazir-Thin.woff2";
 import VazirMedium from "./fonts/Vazir-Medium.woff2";
 import { faIR } from "@mui/material/locale";
 
-let theme = createTheme({
+const theme = createTheme({
   cssVariables: true,
   direction: "rtl",
   palette: {
@@ -28,14 +28,9 @@ let theme = createTheme({
     fontFamily: "Vazir",
     fontSize: 12,
   },
-});
-
-const theme = createTheme(
-  {
-    ...baseTheme,
-    components: {
-      MuiCssBaseline: {
-        styleOverrides: `
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
         @font-face {
           font-family: 'Vazir';
           font-style: normal;
@@ -71,17 +66,24 @@ const theme = createTheme(
           src: url(${VazirBold});
         }
 
-        * {
-          scrollbar-width: thin;
-          scrollbar-color: ${baseTheme.palette.primary.main} ${baseTheme.palette.secondary.main};
+        *::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
         }
 
+        *::-webkit-scrollbar-track {
+          background-color: var(--mui-palette-secondary-main);
+        }
+
+        *::-webkit-scrollbar-thumb {
+          background-color: var(--mui-palette-primary-main);
+          border-radius: 4px;
+        }
       `,
-      },
     },
   },
   faIR
-);
+});
 
 const el = document.getElementById("root");
 const root = ReactDOM.createRoot(el);

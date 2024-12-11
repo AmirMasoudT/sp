@@ -1,41 +1,25 @@
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import DirectionsIcon from "@mui/icons-material/Directions";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import WarningIcon from "@mui/icons-material/Warning";
 import {
-  bgcolor,
-  border,
-  borderColor,
-  borderRadius,
-  Box,
-  Stack,
-  width,
-} from "@mui/system";
-import { fakeData } from "../../../data/fakeData";
-import {
-  Avatar,
-  Card,
-  CardActionArea,
-  Divider,
-  Grid2,
   Grow,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
-  ListSubheader,
-  SvgIcon,
-  Typography,
+  ListSubheader
 } from "@mui/material";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import WarningIcon from "@mui/icons-material/Warning";
-import LocationCityIcon from "@mui/icons-material/LocationCity";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import DirectionsIcon from "@mui/icons-material/Directions";
-import LinkedCameraIcon from "@mui/icons-material/LinkedCamera";
+import {
+  Stack
+} from "@mui/system";
 import { useEffect, useState } from "react";
 import FilterSelect from "../../../components/FilterSelect";
+import LicensePlate from "../../../components/LicensePlate";
+import { fakeData } from "../../../data/fakeData";
 import Rtl from "../../../utils/Rtl";
 import { useSelection } from "../../../utils/SelectionContext";
-import LicensePlate from "../../../components/LicensePlate";
 
 const LpList = () => {
   const { selected, setSelected } = useSelection();
@@ -223,7 +207,6 @@ const LpList = () => {
               width: "100%",
               position: "relative",
               overflow: "auto",
-              scrollbarWidth: "thin",
               "& ul": { padding: 0 },
               "& .MuiListItemButton-root:hover": {
                 bgcolor: "var(--mui-palette-secondary-light) !important",
