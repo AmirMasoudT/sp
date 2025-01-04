@@ -7,7 +7,7 @@ import { Stack } from "@mui/system";
 const Header = () => {
   return (
     <Stack
-      height="80px"
+      height="65px"
       direction="column"
       color="secondary.light"
       bgcolor="primary.main"

@@ -26,7 +26,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Vazir",
-    fontSize: 12,
+    fontSize: 10,
   },
   components: {
     MuiCssBaseline: {
@@ -82,7 +82,7 @@ const theme = createTheme({
       `,
     },
   },
-  faIR
+  faIR,
 });
 
 const el = document.getElementById("root");

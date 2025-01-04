@@ -1,47 +1,41 @@
 import {
   Avatar,
-  Card,
-  CardContent,
-  dividerClasses,
+  Box,
+  Grid2,
+  Grow,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText,
   Paper,
-  Typography,
-  Box,
-  Divider,
-  Zoom,
-  Grow,
-  Grid2,
-  TableContainer,
   Table,
+  TableBody,
+  TableCell,
+  tableCellClasses,
+  TableContainer,
   TableHead,
   TableRow,
-  TableCell,
-  TableBody,
-  tableCellClasses,
+  Typography,
+  Zoom,
 } from "@mui/material";
-import { TransitionGroup } from "react-transition-group";
 
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import DirectionsIcon from "@mui/icons-material/Directions";
-import LocationCityIcon from "@mui/icons-material/LocationCity";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import DatasetIcon from "@mui/icons-material/Dataset";
+import DirectionsIcon from "@mui/icons-material/Directions";
+import LocalPoliceIcon from "@mui/icons-material/LocalPolice";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import QrCodeIcon from "@mui/icons-material/QrCode";
+import SpeedIcon from "@mui/icons-material/Speed";
 import TimerIcon from "@mui/icons-material/Timer";
 import WarningIcon from "@mui/icons-material/Warning";
-import DatasetIcon from "@mui/icons-material/Dataset";
-import LocalPoliceIcon from "@mui/icons-material/LocalPolice";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import SpeedIcon from "@mui/icons-material/Speed";
-import { fakeData } from "../../../data/fakeData";
-import { useSelection } from "../../../utils/SelectionContext";
-import Rtl from "../../../utils/Rtl";
 import { Stack, styled } from "@mui/system";
+import { useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
-import { useEffect, useRef } from "react";
+import { fakeData } from "../../../data/fakeData";
+import Rtl from "../../../utils/Rtl";
+import { useSelection } from "../../../utils/SelectionContext";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -71,16 +65,17 @@ const DataDisplay = () => {
   // Create a new component to handle map movements
   function MapController({ selectedObject }) {
     const map = useMap(); // useMap hook gives us access to the Leaflet map instance
-    
+
     useEffect(() => {
       if (selectedObject) {
         map.flyTo(
           [selectedObject.location.lat, selectedObject.location.lng],
-          15, { duration: 0.5 }
+          15,
+          { duration: 0.5 }
         );
       }
     }, [selectedObject, map]);
-    
+
     return null;
   }
 
@@ -115,7 +110,7 @@ const DataDisplay = () => {
                   display: "flex",
                   flexWrap: "wrap",
                   gap: 1,
-                  justifyContent: "space-between",
+                  // justifyContent: "center",
                   "& .MuiListItemAvatar-root": {
                     minWidth: 40,
                   },
@@ -128,7 +123,7 @@ const DataDisplay = () => {
                     p: 0.5,
                     bgcolor: "secondary.main",
                     borderRadius: 1,
-                    width: "190px",
+                    width: { lg: "160px", xl: "200px" },
                     boxSizing: "border-box",
                   },
                   "& .MuiListItemText-root": {
@@ -266,7 +261,7 @@ const DataDisplay = () => {
             </Rtl>
           </Grid2>
 
-          <Grid2 sx={{ height: 1 / 2 }} size={6}>
+          <Grid2 sx={{ height: { lg: "44%", xl: "55%" } }} size={6}>
             <img
               src={selectedObject.imageUrl}
               alt="car"
@@ -281,7 +276,6 @@ const DataDisplay = () => {
                 selectedObject.location.lng,
               ]}
               zoom={15}
-
               style={{ width: "100%", height: "100%" }}
             >
               <MapController selectedObject={selectedObject} />
@@ -302,7 +296,10 @@ const DataDisplay = () => {
 
           <Rtl>
             <Grid2 size={2}>
-              <TableContainer component={Paper} sx={{ height: 4 / 5 }}>
+              <TableContainer
+                component={Paper}
+                sx={{ height: { lg: 4 / 5, xl: 1 } }}
+              >
                 <Table
                   sx={{ width: "100%" }}
                   size="small"
@@ -360,7 +357,10 @@ const DataDisplay = () => {
               </TableContainer>
             </Grid2>
             <Grid2 size={3}>
-              <TableContainer component={Paper} sx={{ height: 4 / 5 }}>
+              <TableContainer
+                component={Paper}
+                sx={{ height: { lg: 4 / 5, xl: 1 } }}
+              >
                 <Table
                   sx={{ width: "100%" }}
                   size="small"
@@ -422,7 +422,10 @@ const DataDisplay = () => {
               </TableContainer>
             </Grid2>
             <Grid2 size={7}>
-              <TableContainer component={Paper} sx={{ height: 4 / 5 }}>
+              <TableContainer
+                component={Paper}
+                sx={{ height: { lg: 4 / 5, xl: 1 } }}
+              >
                 <Table
                   sx={{ width: "100%" }}
                   size="small"

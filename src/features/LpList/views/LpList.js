@@ -9,11 +9,9 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  ListSubheader
+  ListSubheader,
 } from "@mui/material";
-import {
-  Stack
-} from "@mui/system";
+import { Stack } from "@mui/system";
 import { useEffect, useState } from "react";
 import FilterSelect from "../../../components/FilterSelect";
 import LicensePlate from "../../../components/LicensePlate";
@@ -278,7 +276,7 @@ const LpList = () => {
                           <AccessTimeIcon fontSize="2px" />
                           <ListItemText
                             primary={car.travelTime}
-                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                            primaryTypographyProps={{ fontSize: "0.6rem" }}
                           />
                         </Stack>
                         <Stack
@@ -289,7 +287,7 @@ const LpList = () => {
                           <WarningIcon fontSize="2px" />
                           <ListItemText
                             primary={car.pursuitReason}
-                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                            primaryTypographyProps={{ fontSize: "0.6rem" }}
                           />
                         </Stack>
                         <Stack
@@ -300,7 +298,7 @@ const LpList = () => {
                           <LocationCityIcon fontSize="2px" />
                           <ListItemText
                             primary={car.passageCity}
-                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                            primaryTypographyProps={{ fontSize: "0.6rem" }}
                           />
                         </Stack>
                         <Stack
@@ -311,7 +309,7 @@ const LpList = () => {
                           <CameraAltIcon fontSize="2px" />
                           <ListItemText
                             primary={car.senderCam}
-                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                            primaryTypographyProps={{ fontSize: "0.6rem" }}
                           />
                         </Stack>
                         <Stack
@@ -322,7 +320,7 @@ const LpList = () => {
                           <DirectionsIcon fontSize="2px" />
                           <ListItemText
                             primary={car.passageWay}
-                            primaryTypographyProps={{ fontSize: "0.7rem" }}
+                            primaryTypographyProps={{ fontSize: "0.6rem" }}
                           />
                         </Stack>
                       </Stack>

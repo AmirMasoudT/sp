@@ -77,9 +77,9 @@ const LicensePlate = ({ licenseNo }) => {
                 component="span"
                 sx={{
                   position: "absolute",
-                  top: 7,
-                  left: 82,
-                  fontSize: "0.5rem",
+                  top: 9,
+                  left: 84,
+                  fontSize: "0.4rem",
                   fontFamily: "sans-serif",
                   transform: "scaleY(0.7)",
                   letterSpacing: 0,

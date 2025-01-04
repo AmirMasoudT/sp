@@ -9,7 +9,7 @@ function App() {
   return (
     <Box sx={{ overflow: "hidden" }}>
       <Header />
-      <Grid2 container sx={{ height: "calc(100vh - 80px)" }}>
+      <Grid2 container sx={{ height: "calc(100vh - 65px)" }}>
         <SelectionProvider>
           <Grid2 item sx={{ width: { md: "40%", lg: "30%" }, height: "100%" }}>
             <LpList />
